@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Willy Tours – Transporte Premium en Colombia</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+  
+  <!-- Swiper.js CSS for the Carousel -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+  
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
+<body>
+
+  <!-- Header Section (No changes) -->
+  <header class="main-header">
+    <div class="container">
+      <a href="#" class="logo">
+        <img src="willy-tours-logo.png" alt="Willy Tours Logo">
+      </a>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="#about">Sobre Nosotros</a></li>
+          <li><a href="#services">Servicios</a></li>
+          <li><a href="#fleet">Nuestra Flota</a></li> <!-- ENLACE AÑADIDO -->
+          <li><a href="#gallery">Galería</a></li>
+          <li><a href="#testimonials">Opiniones</a></li>
+          <li><a href="#reserva">Reservar</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+<!-- SECCIÓN HERO ACTUALIZADA CON ELEMENTOS SEPARADOS -->
+<!-- CÓDIGO HTML ACTUALIZADO PARA EL HERO -->
+
+<section class="hero">
+  <!-- El nuevo logotipo y el fondo no cambian -->
+  
+  <div class="hero-content">
+    <!-- ESTRUCTURA DEL H1 MODIFICADA -->
+    <h1>
+      <div class="mask-line"><span>Explora con estilo.</span></div>
+      <div class="mask-line"><span>Viaja con confianza.</span></div>
+    </h1>
+    <!-- El párrafo y el botón no cambian su estructura -->
+    <p>Descubre Colombia con un servicio de transporte premium, seguro y puntual.</p>
+    <!-- BOTÓN ACTUALIZADO PARA REDIRIGIR A WHATSAPP -->
+    <a href="https://wa.link/9g9ql3" target="_blank" class="cta-button">Reserva tu recorrido</a>
+  </div>
+</section>
+
+<section class="intro-text-section">
+  <div class="container">
+<h2 class="gradual-spacing-text animate-on-scroll">Nos adaptamos a las necesidades<br>de nuestros clientes</h2>
+  </div>
+</section>
+<!-- SECCIÓN 'SOBRE NOSOTROS' ACTUALIZADA CON SLIDER -->
+<section id="about" class="about-us">
+  <div class="container">
+       <div class="about-card animate-on-scroll">
+      <!-- Contenedor para el nuevo slider de imágenes -->
+      <div class="about-image-slider">
+        <div class="slides-container">
+          <img src="willy-tours-about-car.png" alt="Vehículo de Willy Tours" class="about-slide active-slide">
+          <img src="willy-photo.jpg" alt="Willy, fundador de Willy Tours" class="about-slide">
+        </div>
+        <!-- Navegación del Slider -->
+        <div class="slider-nav">
+          <button id="prevBtn" aria-label="Imagen anterior"><i class="fas fa-chevron-left"></i></button>
+          <button id="nextBtn" aria-label="Siguiente imagen"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </div>
+      
+      <!-- El texto no cambia -->
+      <div class="about-text">
+          <h2>Conoce a Willy</h2>
+          <p>En Willy Tours, ofrecemos más que un simple viaje; brindamos una experiencia premium, segura y cómoda para explorar los mejores destinos. Mi compromiso es personal: con conductores profesionales y vehículos modernos, me aseguro de que disfrutes de un viaje inolvidable.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Services Section (UPDATED) -->
+ <section id="services" class="services">
+    <div class="container">
+      <h2>Nuestros Servicios en Santander</h2>
+      <p class="section-subtitle">Tu viaje en Bucaramanga y sus alrededores comienza aquí.</p>
+      
+      <section id="ruta-willy-tips" class="ruta-willy-carousel">
+        <div class="container">
+          <h2>Consejos de #RutaWilly</h2>
+          <div class="swiper rutaSwiper">
+            <div class="swiper-wrapper">
+              <!-- Slide 1 -->
+              <div class="swiper-slide tip-slide">
+                <img src="willy-tip-plan.png" alt="Consejo: planifica tu viaje con clima, efectivo y batería">
+              </div>
+              <!-- Slide 2 -->
+              <div class="swiper-slide tip-slide">
+                <img src="willy-tip-niño.png" alt="Consejo: acompañamos a los más pequeños con seguridad y cariño">
+              </div>
+              <!-- Slide 3 -->
+              <div class="swiper-slide tip-slide">
+                <img src="willy-tip-paquetes.png" alt="Consejo: cada entrega cuenta, puntual y con buena energía">
+              </div>
+              <!-- Slide 4 -->
+              <div class="swiper-slide tip-slide">
+                <img src="willy-tip-ayuda.png" alt="Consejo: ayudamos a quienes lo necesitan, siempre con una sonrisa">
+              </div>
+              <!-- Slide 5 -->
+              <div class="swiper-slide tip-slide">
+                <img src="willy-tip-negocios.png" alt="Consejo: la puntualidad es clave para tu día de trabajo">
+              </div>
+            </div>
+            <!-- Controles del carrusel -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Nuevo bloque de servicio destacado -->
+      <div class="service-feature-card">
+        <div class="service-feature-text">
+            <h3><i class="fas fa-plane-departure"></i> Transporte desde el Aeropuerto Palonegro</h3>
+            <p>¿Aterrizas en Bucaramanga? Te ofrecemos un traslado con la comodidad, seguridad y estilo que mereces. Vehículos en perfecto estado, con aire acondicionado y espacio amplio para tu equipaje.</p>
+            <ul>
+                <li><i class="fas fa-check-circle"></i> Tarifas claras y competitivas</li>
+                <li><i class="fas fa-check-circle"></i> Atención personalizada</li>
+                <li><i class="fas fa-check-circle"></i> Ideal para viajeros individuales, parejas o grupos</li>
+            </ul>
+            <a href="https://wa.link/9g9ql3" target="_blank" class="cta-link">Reserva tu recorrido y viaja con la mejor energía <i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="service-feature-image">
+          <img src="bucaramanga-skyline.jpg" alt="Transporte en Bucaramanga">
+        </div>
+      </div>
+
+      <!-- Otros servicios -->
+      <div class="services-grid">
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-clock"></i></div>
+          <h3>Transporte por Horas</h3>
+          <p>Muévete a tu ritmo por Bucaramanga. Ideal para reuniones, diligencias o explorar la ciudad con total flexibilidad y confort.</p>
+          <a href="https://wa.link/9g9ql3" target="_blank" class="cta-link">Cotiza tu recorrido <i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-mountain-sun"></i></div>
+          <h3>Transporte Turístico</h3>
+          <p>Explora lo mejor de Santander. Te llevamos a lugares inolvidables como Barichara, San Gil y Zapatoca con seguridad y estilo.</p>
+          <a href="https://wa.link/9g9ql3" target="_blank" class="cta-link">Reserva tu tour <i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-briefcase"></i></div>
+          <h3>Tu Aliado Empresarial</h3>
+          <p>Garantiza una imagen impecable y la máxima puntualidad para tus ejecutivos, clientes o eventos. Un servicio confiable y discreto.</p>
+          <a href="https://wa.link/9g9ql3" target="_blank" class="cta-link">Solicita una cotización <i class="fab fa-whatsapp"></i></a>
+        </div>
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-hand-holding-heart"></i></div>
+          <h3>Movilidad Senior</h3>
+          <p>Acompañamos a nuestros adultos mayores a sus citas y diligencias con paciencia, empatía y un trato amable y respetuoso.</p>
+          <a href="https://wa.link/9g9ql3" target="_blank" class="cta-link">Agenda un servicio <i class="fab fa-whatsapp"></i></a>
+        </div>
+        <!-- NUEVA TARJETA: Entrega de Paquetes -->
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-box-open"></i></div>
+          <h3>Entrega de Paquetes</h3>
+          <p>Servicio de mensajería express. Entregamos tus documentos y paquetes importantes con la misma confianza que a nuestros pasajeros.</p>
+          <a href="https://wa.link/9g9ql3" target="_blank" class="cta-link">Cotiza tu envío <i class="fab fa-whatsapp"></i></a>
+        </div>
+        <!-- NUEVA TARJETA: Eventos Especiales -->
+        <div class="card">
+          <div class="card-icon"><i class="fas fa-glass-cheers"></i></div>
+          <h3>Eventos Especiales</h3>
+          <p>Llega a esa boda, celebración o evento importante con la elegancia y comodidad que la ocasión merece. Nosotros nos encargamos.</p>
+          <a href="https://wa.link/9g9ql3" target="_blank" class="cta-link">Consulta disponibilidad <i class="fab fa-whatsapp"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ====================================================================== -->
+  <!-- ======================= NEW FLEET SECTION ============================ -->
+  <!-- ====================================================================== -->
+<section id="fleet" class="fleet-section">
+  <div class="container">
+    <!-- El texto va primero y por fuera del contenedor de la imagen -->
+    <h2 class="animate-on-scroll">Viaja tranquilo, viaja con Willy</h2>
+    <p class="section-subtitle animate-on-scroll">Nuestros vehículos están listos para brindarte una experiencia cómoda desde el primer kilómetro. Explora Bucaramanga y alrededores con el transporte que se adapta a ti.</p>
+
+    <!-- Este es el único contenedor para la imagen -->
+    <div class="fleet-image-container animate-on-scroll">
+      <img src="nuestra-flota.png" alt="Flota de vehículos de Willy Tours: SUV, vans y bus para 4, 7, 15 y 40 pasajeros">
+    </div>
+  </div>
+</section>
+  
+  <!-- Gallery Section -->
+  <section id="gallery" class="gallery">
+    <div class="container">
+      <h2>Nuestras Aventuras en Fotos</h2>
+      <!-- Swiper Carousel -->
+      <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide"><img src="gallery1.jpg" alt="Paisaje de Santander"></div>
+          <div class="swiper-slide"><img src="gallery2.jpg"  alt="Vehículo Willy Tours en Barichara"></div>
+          <div class="swiper-slide"><img src="gallery3.jpg" alt="Viajeros disfrutando del tour"></div>
+          <div class="swiper-slide"><img src="gallery4.jpg" alt="Cañón del Chicamocha"></div>
+          <div class="swiper-slide"><img src="gallery5.jpg" alt="Detalle del interior del vehículo"></div>
+          <div class="swiper-slide"><img src="gallery6.jpg" alt="Grupo de turistas en San Gil"></div>
+          <div class="swiper-slide"><img src="gallery7.jpg" alt="Atardecer en Barichara"></div>
+          <div class="swiper-slide"><img src="gallery8.jpg" alt="Viaje en pareja con Willy Tours"></div>
+          <div class="swiper-slide"><img src="gallery9.jpg" alt="Familia disfrutando del tour"></div>
+          <div class="swiper-slide"><img src="gallery10.jpg" alt="Paisaje de Zapatoca"></div>
+          <div class="swiper-slide"><img src="gallery11.jpg" alt="Conductor profesional de Willy Tours"></div>
+          <div class="swiper-slide"><img src="gallery12.jpg" alt="Viaje en grupo con Willy Tours"></div>
+          <div class="swiper-slide"><img src="gallery13.jpg" alt="Disfrutando de la naturaleza en Santander"></div>
+          <div class="swiper-slide"><img src="gallery14.jpg" alt="Viaje cómodo y seguro"></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination"></div>
+        <!-- Add Navigation -->
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- UPDATED: Testimonials Section -->
+  <section id="testimonials" class="testimonials-new">
+    <div class="container">
+      <h2>Nuestros Viajeros Opinan</h2>
+      <div class="testimonials-grid">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card-new">
+          <i class="fas fa-quote-left testimonial-quote-icon"></i>
+          <p class="quote">“Viajar con Willy Tours fue la mejor decisión de nuestras vacaciones. Puntuales, atentos y súper cómodos.”</p>
+          <div class="testimonial-author">
+            <img src="avatar1.jpg" alt="Laura Gómez" class="author-avatar">
+            <div class="author-info">
+              <span class="author-name">Laura Gómez</span>
+              <span class="author-location">Medellín</span>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card-new">
+          <i class="fas fa-quote-left testimonial-quote-icon"></i>
+          <p class="quote">“Excelente servicio, se siente la calidad desde el primer momento. Totalmente recomendado.”</p>
+          <div class="testimonial-author">
+            <img src="avatar2.jpg" alt="Carlos Herrera" class="author-avatar">
+            <div class="author-info">
+              <span class="author-name">Carlos Herrera</span>
+              <span class="author-location">Bogotá</span>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card-new">
+          <i class="fas fa-quote-left testimonial-quote-icon"></i>
+          <p class="quote">“El conductor fue increíblemente amable y conocedor de la zona. Hizo nuestro viaje a San Gil una experiencia única.”</p>
+          <div class="testimonial-author">
+            <img src="avatar3.png" alt="Ana Martínez" class="author-avatar">
+            <div class="author-info">
+              <span class="author-name">Karla Biancheri</span>
+              <span class="author-location">Extranjera</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <!-- Booking Section (No changes) -->
+  <section class="booking">
+    <!-- ... content is the same ... -->
+  </section>
+<!-- ====================================================================== -->
+<!-- ================= NEW INTERACTIVE MAP SECTION ======================== -->
+<!-- ====================================================================== -->
+<section id="interactive-map" class="interactive-map-section">
+  <div class="container">
+    <h2 class="animate-on-scroll">Descubre tu próxima parada, ¿A dónde vamos hoy?</h2>
+
+    <div class="map-container animate-on-scroll">
+      <!-- El mapa base como imagen de fondo -->
+      <img src="explora-santander.png" alt="Mapa ilustrado de destinos en Santander" class="map-image">
+
+      <!-- Marcador para Barichara -->
+      <div class="map-marker" id="marker-barichara">
+        <div class="marker-dot"></div>
+        <div class="info-card">
+          <img src="barichara-thumb.jpg" alt="Calles de Barichara">
+          <h3>Barichara</h3>
+          <p>Pueblo patrimonio y calles de ensueño.</p>
+        </div>
+      </div>
+
+      <!-- Marcador para San Gil -->
+      <div class="map-marker" id="marker-san-gil">
+        <div class="marker-dot"></div>
+        <div class="info-card">
+          <img src="san-gil-thumb.jpg" alt="Canotaje en San Gil">
+          <h3>San Gil</h3>
+          <p>La capital de la aventura y la adrenalina.</p>
+        </div>
+      </div>
+
+      <!-- Marcador para Zapatoca -->
+      <div class="map-marker" id="marker-zapatoca">
+        <div class="marker-dot"></div>
+        <div class="info-card">
+          <img src="zapatoca-thumb.jpg" alt="Senderismo en Zapatoca">
+          <h3>Zapatoca</h3>
+          <p>El pueblo con el clima de seda y naturaleza.</p>
+        </div>
+      </div>
+
+      <!-- Marcador para Chicamocha -->
+      <div class="map-marker" id="marker-chicamocha">
+        <div class="marker-dot"></div>
+        <div class="info-card">
+          <img src="chicamocha-thumb.jpg" alt="Cañón del Chicamocha">
+          <h3>Cañón del Chicamocha</h3>
+          <p>Un paisaje imponente y vistas espectaculares.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+  <!-- NEW: Final CTA Section -->
+  <section class="final-cta"id="reserva">
+    <div class="container">
+      <h2>¿Listo para tu próxima aventura?</h2>
+      <a href="https://wa.link/9g9ql3" target="_blank" class="cta-button-contact">Contáctanos</a>
+      <div class="social-links">
+        <a href="https://wa.link/9g9ql3" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        <a href="mailto:willytraes877@hotmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+    </div>
+  </section>
+  <!-- NEW: Willy Tips Section -->
+<section id="willy-tips" class="willy-tips-section">
+  <div class="container">
+    <h2>¿Cómo puedes pagar tu viaje?</h2>
+    <p class="section-subtitle">Rápido, fácil y sin complicaciones.</p>
+    <div class="tip-card">
+      <img src="willy-payment.png" alt="Willy, la mascota de Willy Tours, dando un consejo de viaje sobre planificación, clima, efectivo y batería.">
+    </div>
+  </div>
+</section>
+  <!-- Footer (No changes) -->
+ <footer>
+    <div class="container">
+      <p class="footer-brand">Willy Tours – Confort en cada kilómetro.</p>
+      <div class="footer-links">
+        <a href="#about">Sobre Nosotros</a> |
+        <a href="#services">Servicios</a> |
+        <a href="#testimonials">Reseñas</a> |
+        <a href="#reserva">Reservar</a>
+      </div>
+      <div class="footer-social">
+        <p>#WillyTours #ViajesConEstilo #ColombiaEnRuta</p>
+        <!-- Aquí puedes agregar links a tus redes sociales -->
+        <!-- <a href="#"><i class="fab fa-instagram"></i></a> -->
+        <!-- <a href="#"><i class="fab fa-facebook"></i></a> -->
+      </div>
+    </div>
+  </footer>
+
+  <!-- Swiper.js Script -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+
+<!-- Initialize Swiper -->
+<script>
+  // Carrusel de Galería (ya existente)
+  var swiper = new Swiper(".mySwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    centeredSlides: true,
+    pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+    },
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      }
+    }
+  });
+
+  // Carrusel de consejos #RutaWilly
+  var rutaSwiper = new Swiper(".rutaSwiper", {
+    slidesPerView: 1,
+    spaceBetween: 30,
+    loop: true,
+    centeredSlides: true,
+    navigation: {
+      nextEl: ".swiper-button-next",
+      prevEl: ".swiper-button-prev",
+    },
+  });
+</script>
+ <!-- AÑADE ESTE SCRIPT AL FINAL DEL BODY -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Selecciona los elementos del slider de la sección "About Us"
+      const slides = document.querySelectorAll('.about-slide');
+      const nextBtn = document.getElementById('nextBtn');
+      const prevBtn = document.getElementById('prevBtn');
+      
+      let currentSlide = 0;
+      const totalSlides = slides.length;
+
+      // Función para mostrar la diapositiva correcta
+      function showSlide(slideIndex) {
+        // Oculta todas las diapositivas
+        slides.forEach(slide => {
+          slide.classList.remove('active-slide');
+        });
+        // Muestra solo la diapositiva correcta
+        slides[slideIndex].classList.add('active-slide');
+      }
+
+      // Evento para el botón "Siguiente"
+      nextBtn.addEventListener('click', function() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+      });
+
+      // Evento para el botón "Anterior"
+      prevBtn.addEventListener('click', function() {
+        currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+        showSlide(currentSlide);
+      });
+      
+      // Asegurarse que la primera diapositiva se muestre al cargar
+      showSlide(currentSlide);
+    });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const header = document.querySelector('.main-header');
+        
+        window.addEventListener('scroll', function() {
+            // Si el scroll vertical es mayor a 50px, añade la clase. Si no, la quita.
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+    });
+  </script>
+
+
+<!-- SCRIPT PARA ACTIVAR LAS ANIMACIONES DEL HERO -->
+<script>
+  window.addEventListener('load', function() {
+    // Damos un pequeño respiro para asegurar que todo esté renderizado
+    setTimeout(function() {
+      const heroContent = document.querySelector('.hero-content');
+      if (heroContent) {
+        heroContent.classList.add('animate-hero');
+      }
+    }, 200); // 200ms de retraso
+  });
+</script>
+<!-- SCRIPT PARA ANIMACIONES CON INTERSECTION OBSERVER -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    
+    // --- LÓGICA PARA EL TEXTO GRADUAL (se ejecuta una vez) ---
+const gradualText = document.querySelector('.gradual-spacing-text');
+if (gradualText) {
+  // 1. Guardamos una copia de los nodos hijos (texto, <br>, etc.)
+  const childNodes = Array.from(gradualText.childNodes);
+  
+  // 2. Vaciamos el contenedor original
+  gradualText.innerHTML = ''; 
+
+  // 3. Recorremos cada nodo que guardamos
+  childNodes.forEach(node => {
+    // 4. Si el nodo es TEXTO, lo dividimos en letras (<span>)
+    if (node.nodeType === 3) { // Node.TEXT_NODE
+      const text = node.textContent;
+      text.split('').forEach(char => {
+        const span = document.createElement('span');
+        if (char === ' ') {
+          span.innerHTML = ' '; // Usamos   para consistencia
+          span.classList.add('is-space');
+        } else {
+          span.textContent = char;
+        }
+        gradualText.appendChild(span);
+      });
+    } 
+    // 5. Si el nodo es un ELEMENTO (como <br>), simplemente lo volvemos a añadir
+    else if (node.nodeType === 1) { // Node.ELEMENT_NODE
+      gradualText.appendChild(node.cloneNode(true));
+    }
+  });
+}
+
+    // --- LÓGICA DEL INTERSECTION OBSERVER ---
+    const targets = document.querySelectorAll('.animate-on-scroll');
+
+    const observer = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        // Si el elemento es visible
+        if (entry.isIntersecting) {
+          // Añade la clase 'is-visible' para activar la animación CSS
+          entry.target.classList.add('is-visible');
+
+          // (Opcional) Asigna los retrasos de animación para el texto gradual
+          if (entry.target.classList.contains('gradual-spacing-text')) {
+            const spans = entry.target.querySelectorAll('span');
+            const delayMultiple = 0.04;
+            spans.forEach((span, i) => {
+              span.style.animationDelay = `${i * delayMultiple}s`;
+            });
+          }
+
+          // Deja de observar el elemento para que la animación no se repita
+          observer.unobserve(entry.target);
+        }
+      });
+    }, {
+      threshold: 0.15 // La animación se dispara cuando el 15% del elemento es visible
+    });
+
+    // Observa cada uno de los elementos marcados
+    targets.forEach(target => {
+      observer.observe(target);
+    });
+
+  });
+</script>
+
+</body>
+</html>

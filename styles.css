@@ -783,7 +783,7 @@ footer {
   box-shadow: var(--box-shadow);
 }
 
-/* --- NEW: Gradual Spacing Text Animation --- */
+/* --- NEW: Gradual Spacing Text Animation (OPTIMIZED FOR MOBILE) --- */
 
 /* Estilos para la sección contenedora */
 .intro-text-section {
@@ -792,47 +792,51 @@ footer {
   background-color: var(--background-color);
 }
 
-/* Estilos para el texto que se va a animar */
-.gradual-spacing-text span {
+/* 
+  NUEVO: Contenedor de cada palabra.
+  Esto asegura que la palabra no se rompa por la mitad.
+*/
+.gradual-spacing-text .word-wrapper {
+  display: inline-block; /* Mantiene la palabra como un bloque unido */
+}
+
+/* 
+  Estilos para cada letra (span) dentro del contenedor de la palabra.
+  Esto es lo que se anima.
+*/
+.gradual-spacing-text .word-wrapper > span {
   display: inline-block;
   opacity: 0; /* Empiezan invisibles */
 }
 
-/* 
-  Cada letra será un <span>. 
-  Aquí definimos su estado inicial y la animación que usará.
-*/
 /* REGLA CSS ACTUALIZADA */
-/* La animación solo se aplica cuando el padre tiene la clase 'is-visible' */
-.gradual-spacing-text.is-visible span {
+/* La animación solo se aplica a las letras cuando el padre tiene la clase 'is-visible' */
+.gradual-spacing-text.is-visible .word-wrapper > span {
   animation: fadeInUp 0.5s forwards;
 }
 
 /* 
-  Definimos la animación 'fadeInUp'.
+  Definimos la animación 'fadeInUp' (sin cambios aquí).
   'forwards' hace que el estado final (100%) se mantenga.
 */
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateX(-20px); /* Empieza 20px a la izquierda */
+    transform: translateY(20px);
   }
   to {
     opacity: 1;
-    transform: translateX(0); /* Termina en su posición original */
+    transform: translateY(0);
   }
 }
 
-/* Media query para pantallas más pequeñas */
+/* Media query para pantallas más pequeñas (sin cambios aquí) */
 @media (max-width: 768px) {
   .gradual-spacing-text {
     font-size: 1.8rem;
   }
 }
-/* Corrección para dar ancho a los espacios en la animación de texto */
-.gradual-spacing-text .is-space {
-  margin-right: 0.25em; /* Añade un pequeño margen a la derecha del 'span' de espacio */
-}
+/* Ya no se necesita la corrección para el espacio, el JS ahora lo maneja correctamente */
 
 /* --- ANIMACIONES PARA LA SECCIÓN HERO --- */
 
