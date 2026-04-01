@@ -4,10 +4,10 @@
 
 /* --- Variables y Estilos Globales --- */
 :root {
-  --primary-color: #006A6A; /* Teal/Verde principal de tu marca */
-  --secondary-color: #E0F2F1; /* Verde muy claro para fondos */
-  --accent-color: #2E7D32; /* Un verde más brillante para CTAs */
-  --background-color: #FAF8F5; /* Un blanco hueso/beige muy sutil */
+  --primary-color: #006A6A;
+  --secondary-color: #E0F2F1;
+  --accent-color: #2E7D32;
+  --background-color: #FAF8F5;
   --text-color: #333333;
   --heading-font: 'Montserrat', sans-serif;
   --body-font: 'Open Sans', sans-serif;
@@ -50,40 +50,35 @@ section {
 
 /* --- Header y Navegación --- */
 .main-header {
-  /* CAMBIOS CLAVE: Inicia transparente y posicionado sobre la imagen */
   background: transparent; 
   padding: 15px 0;
-  position: absolute; /* Cambiado de 'sticky' a 'absolute' */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   z-index: 1000;
-  transition: background-color 0.4s ease, box-shadow 0.4s ease; /* Transición suave */
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
 }
 
 .main-header.scrolled {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.95);
   backdrop-filter: blur(10px);
-  position: fixed; /* Se vuelve fijo al hacer scroll */
+  position: fixed;
   box-shadow: 0 2px 10px rgba(0,0,0,0.1);
 }
 
-/* Ajusta el color del logo y los links para que se vean sobre la imagen */
 .main-header .logo img {
   height: 50px;
-  /* Podrías necesitar un filtro si el logo no se ve bien al principio */
-  /* filter: brightness(0) invert(1); */ 
 }
 
 .main-header .main-nav a {
   text-decoration: none;
-  color: white; /* Color inicial de los links */
+  color: white;
   font-weight: 600;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.4); /* Sombra para legibilidad */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.4);
   transition: color 0.3s ease;
 }
 
-/* Cambia el color de los links cuando el header tiene fondo */
 .main-header.scrolled .main-nav a {
   color: var(--primary-color);
   text-shadow: none;
@@ -106,7 +101,8 @@ section {
 .main-nav ul {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 25px;
+  align-items: center;
 }
 
 .main-nav a {
@@ -114,10 +110,212 @@ section {
   color: var(--primary-color);
   font-weight: 600;
   transition: color 0.3s ease;
+  font-size: 0.95rem;
 }
 
 .main-nav a:hover {
   color: var(--accent-color);
+}
+
+/* Nav CTA Button */
+.nav-cta {
+  background-color: var(--accent-color) !important;
+  color: white !important;
+  padding: 8px 20px;
+  border-radius: 50px;
+  text-shadow: none !important;
+  transition: background-color 0.3s ease, transform 0.3s ease !important;
+}
+
+.nav-cta:hover {
+  background-color: #1B5E20 !important;
+  transform: translateY(-2px);
+}
+
+/* --- Dropdown Navigation --- */
+.nav-dropdown {
+  position: relative;
+}
+
+.dropdown-trigger {
+  cursor: pointer;
+}
+
+.dropdown-trigger i {
+  font-size: 0.65rem;
+  margin-left: 3px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  padding: 12px 0;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  flex-direction: column;
+  z-index: 100;
+}
+
+.nav-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(5px);
+}
+
+.nav-dropdown:hover .dropdown-trigger i {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu li {
+  padding: 0;
+}
+
+.dropdown-menu a {
+  display: block;
+  padding: 8px 20px;
+  color: var(--text-color) !important;
+  text-shadow: none !important;
+  font-size: 0.9rem;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu a:hover {
+  background-color: var(--secondary-color);
+  color: var(--primary-color) !important;
+}
+
+/* --- Hamburger Menu --- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 1001;
+}
+
+.hamburger-line {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: white;
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+.main-header.scrolled .hamburger-line {
+  background-color: var(--primary-color);
+}
+
+/* Hamburger active state (X shape) */
+.hamburger.active .hamburger-line:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 6px);
+}
+.hamburger.active .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+.hamburger.active .hamburger-line:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -6px);
+}
+
+/* --- Mobile Navigation --- */
+@media (max-width: 900px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .main-nav {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 350px;
+    height: 100vh;
+    background: white;
+    box-shadow: -5px 0 25px rgba(0, 0, 0, 0.15);
+    transition: right 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    padding: 80px 30px 30px;
+    z-index: 999;
+    overflow-y: auto;
+  }
+
+  .main-nav.active {
+    right: 0;
+  }
+
+  .main-nav ul {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  .main-nav li {
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .main-nav a {
+    display: block;
+    padding: 15px 0;
+    color: var(--text-color) !important;
+    text-shadow: none !important;
+    font-size: 1.05rem;
+  }
+
+  .main-nav a:hover {
+    color: var(--accent-color) !important;
+  }
+
+  /* Mobile dropdown */
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    box-shadow: none;
+    background: #f9f9f9;
+    border-radius: 8px;
+    padding: 5px 0;
+    margin: 5px 0;
+    opacity: 1;
+    visibility: visible;
+    display: none;
+  }
+
+  .nav-dropdown.open .dropdown-menu {
+    display: block;
+  }
+
+  .dropdown-menu a {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+  }
+
+  /* Mobile nav overlay */
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+  }
+
+  .nav-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
 /* --- Hero Section --- */
@@ -127,24 +325,16 @@ section {
   background-position: center bottom;
   height: 90vh;
   min-height: 600px;
-  position: relative; /* Indispensable para que funcione position: absolute en los hijos */
-  
-  /* Removemos flexbox, ya no lo necesitamos para posicionar */
+  position: relative;
 }
 
-
-
-/* 2. Posicionamiento del contenido (Eslogan, párrafo y botón) */
 .hero-content {
   position: absolute;
-  /* CLAVE: Lo posicionamos desde abajo para un control perfecto */
   bottom: 20%; 
   left: 50%;
   transform: translateX(-50%);
-  
-  width: 90%; /* Evita que el texto se salga en pantallas pequeñas */
-  max-width: 700px; /* Un límite para pantallas grandes */
-  
+  width: 90%;
+  max-width: 700px;
   text-align: center;
   color: white;
   z-index: 5;
@@ -165,7 +355,6 @@ section {
   text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
 }
 
-/* El botón no cambia */
 .cta-button {
   background-color: var(--accent-color);
   color: white;
@@ -186,6 +375,7 @@ section {
   box-shadow: 0 6px 20px rgba(0,0,0,0.2);
 }
 
+/* --- About Section --- */
 .about-us .about-card {
     background: white;
     border-radius: var(--border-radius);
@@ -193,21 +383,19 @@ section {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     align-items: center;
-    overflow: visible; /* Cambiado a visible para no cortar sombras */
+    overflow: visible;
     gap: 40px;
     padding: 40px;
 }
 
-/* Contenedor principal del slider */
 .about-image-slider {
     position: relative;
     width: 100%;
-    min-height: 450px; /* Asegura que el contenedor tenga altura */
+    min-height: 450px;
     border-radius: var(--border-radius);
-    overflow: hidden; /* Oculta las partes de la imagen que se salgan */
+    overflow: hidden;
 }
 
-/* Contenedor de las imágenes apiladas */
 .slides-container {
     width: 100%;
     height: 100%;
@@ -221,16 +409,15 @@ section {
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    transition: opacity 0.6s ease-in-out; /* La magia del fundido */
+    transition: opacity 0.6s ease-in-out;
     z-index: 1;
 }
 
 .about-slide.active-slide {
-    opacity: 1; /* Muestra la diapositiva activa */
+    opacity: 1;
     z-index: 2;
 }
 
-/* Estilos para los botones de navegación */
 .slider-nav {
     position: absolute;
     top: 50%;
@@ -241,11 +428,10 @@ section {
     padding: 0 1rem;
     transform: translateY(-50%);
     z-index: 3;
-    opacity: 0; /* Ocultos por defecto */
+    opacity: 0;
     transition: opacity 0.3s ease;
 }
 
-/* Muestra las flechas al pasar el ratón por encima */
 .about-image-slider:hover .slider-nav {
     opacity: 1;
 }
@@ -281,15 +467,6 @@ section {
     text-align: center;
     margin-top: -1rem;
     margin-bottom: 3rem;
-    font-size: 1.1rem;
-}
-.services {
-    background-color: var(--secondary-color);
-}
-.section-subtitle {
-    text-align: center;
-    margin-top: -1rem;
-    margin-bottom: 2rem;
     font-size: 1.1rem;
 }
 
@@ -330,7 +507,6 @@ section {
     color: var(--accent-color);
 }
 
-/* El grid para los otros dos servicios */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -357,6 +533,15 @@ section {
   margin-bottom: 1rem;
 }
 
+.card a {
+  color: var(--accent-color);
+  text-decoration: none;
+  font-weight: 600;
+}
+.card a:hover {
+  text-decoration: underline;
+}
+
 .cta-link {
     display: inline-block;
     margin-top: 1rem;
@@ -368,126 +553,44 @@ section {
     margin-left: 5px;
 }
 
-/* --- Features Section --- */
-.features ul {
-  list-style: none;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+/* --- Fleet Section --- */
+.fleet-section {
+  padding: 80px 0;
+  background-color: var(--secondary-color);
   text-align: center;
-  margin-top: 3rem;
 }
 
-.features li {
-  background: white;
-  padding: 20px;
+.fleet-section h2 {
+  margin-bottom: 3rem;
+}
+
+.fleet-section .section-subtitle {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 3rem;
+}
+
+.fleet-image-container {
+  text-align: center;
+}
+
+.fleet-image-container img {
+  max-width: 100%;
+  height: auto;
   border-radius: var(--border-radius);
   box-shadow: var(--box-shadow);
-  font-size: 1.1rem;
-  font-weight: 600;
-}
-.features li i {
-    color: var(--primary-color);
-    margin-right: 10px;
 }
 
-/* --- Testimonials Section --- */
-.testimonials .container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 30px;
-}
-.testimonial-card {
-  background: var(--secondary-color);
-  padding: 30px;
-  border-radius: var(--border-radius);
-  max-width: 700px;
-  text-align: center;
-  border-left: 5px solid var(--primary-color);
-}
-.stars { font-size: 1.2rem; color: #FFC107; }
-.quote { font-style: italic; font-size: 1.1rem; margin: 1rem 0; }
-.author { font-weight: 600; color: var(--primary-color); }
-
-
-/* --- Booking Form --- */
-.booking {
-    background: white;
-}
-.booking .container {
-    max-width: 800px;
-    text-align: center;
-}
-.booking p {
-    margin-bottom: 2rem;
-}
-.form-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-bottom: 20px;
-}
-form input, form textarea {
-    width: 100%;
-    padding: 15px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    font-family: var(--body-font);
-    font-size: 1rem;
-}
-form textarea {
-    resize: vertical;
-    min-height: 120px;
-    grid-column: 1 / -1; /* Ocupa todo el ancho */
-    margin-bottom: 20px;
-}
-form button {
-    width: auto;
-    margin-top: 1rem;
-}
-
-/* --- Footer --- */
-footer {
-  background-color: #263238; /* Darker than text for contrast */
-  color: white;
-  text-align: center;
-  padding: 40px 0;
-}
-.footer-brand {
-    font-family: var(--heading-font);
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-}
-.footer-links {
-    margin-bottom: 1rem;
-}
-.footer-links a {
-    color: white;
-    text-decoration: none;
-    margin: 0 10px;
-    transition: color 0.3s ease;
-}
-.footer-links a:hover {
-    color: var(--secondary-color);
-}
-.footer-social p {
-    color: #aaa;
-    font-size: 0.9rem;
-}
-/* ==========================================================================
-   NEW STYLES - APPEND TO EXISTING CSS
-   ========================================================================== */
-
-/* --- NEW: Gallery Section --- */
+/* --- Gallery Section --- */
 .gallery {
   background-color: var(--background-color);
 }
 
 .swiper {
   width: 100%;
-  height: 400px; /* Adjust height as needed */
-  padding: 10px 0 50px 0; /* Padding for shadow and pagination */
+  height: 400px;
+  padding: 10px 0 50px 0;
 }
 
 .swiper-slide {
@@ -509,23 +612,31 @@ footer {
   object-fit: cover;
 }
 
-/* Customizing Swiper Navigation & Pagination colors */
 .swiper-button-next,
 .swiper-button-prev {
   color: var(--primary-color);
+  background: white;
+  border-radius: 50%;
+  width: 44px;
+  height: 44px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  font-size: 18px;
 }
 .swiper-pagination-bullet-active {
   background: var(--primary-color);
 }
 
-/* --- UPDATED: New Testimonials Section --- */
+/* --- Testimonials Section --- */
 .testimonials-new {
     background-color: var(--secondary-color);
 }
 
 .testimonials-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 3rem;
 }
@@ -541,14 +652,22 @@ footer {
 
 .testimonial-quote-icon {
     font-size: 2.5rem;
-    color: #e0e0e0; /* Light gray for the quote icon */
-    margin-bottom: 1rem;
+    color: #e0e0e0;
+    margin-bottom: 0.5rem;
+}
+
+.testimonial-stars {
+    margin-bottom: 0.8rem;
+}
+.testimonial-stars i {
+    color: #FFC107;
+    font-size: 1rem;
 }
 
 .testimonial-card-new .quote {
     font-size: 1rem;
     font-style: italic;
-    flex-grow: 1; /* Makes sure cards have same height */
+    flex-grow: 1;
     margin-bottom: 1.5rem;
 }
 
@@ -556,7 +675,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-top: auto; /* Pushes author to the bottom */
+    margin-top: auto;
     padding-top: 1rem;
     border-top: 1px solid #eee;
 }
@@ -584,7 +703,174 @@ footer {
     color: #777;
 }
 
-/* --- NEW: Final CTA Section --- */
+/* --- Review Form --- */
+.review-form-container {
+    max-width: 700px;
+    margin: 3rem auto 0;
+    background: white;
+    padding: 40px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.review-form-container h3 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+}
+
+.star-rating-input {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+.star-rating-input span {
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.stars-input i {
+    font-size: 1.8rem;
+    color: #ddd;
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.stars-input i:hover,
+.stars-input i.active {
+    color: #FFC107;
+    transform: scale(1.15);
+}
+
+.review-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.review-form input,
+.review-form textarea {
+    width: 100%;
+    padding: 14px 18px;
+    border: 2px solid #e8e8e8;
+    border-radius: 8px;
+    font-family: var(--body-font);
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    outline: none;
+}
+
+.review-form input:focus,
+.review-form textarea:focus {
+    border-color: var(--primary-color);
+}
+
+.review-form textarea {
+    resize: vertical;
+    min-height: 100px;
+    margin-bottom: 15px;
+}
+
+.review-submit-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+}
+
+.review-submit-btn i {
+    margin-left: 8px;
+}
+
+/* Review success toast */
+.review-toast {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: var(--accent-color);
+    color: white;
+    padding: 15px 25px;
+    border-radius: var(--border-radius);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    font-weight: 600;
+    z-index: 9999;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: all 0.4s ease;
+}
+
+.review-toast.visible {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/* --- RutaWilly Carousel --- */
+#ruta-willy-tips {
+  padding: 40px 0;
+  background-color: #e5f7f4;
+  text-align: center;
+}
+
+#ruta-willy-tips h3 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+  color: #004f4e;
+  text-align: center;
+}
+
+.rutaSwiper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.swiper-slide.tip-slide {
+  width: 100%;
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  transition: transform 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.swiper-slide.tip-slide:hover {
+  transform: translateY(-5px);
+}
+
+.swiper-slide.tip-slide img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.swiper-button-prev {
+  left: -30px;
+}
+
+.swiper-button-next {
+  right: -30px;
+}
+
+@media (max-width: 768px) {
+  .swiper-button-prev,
+  .swiper-button-next {
+    display: none;
+  }
+}
+
+/* --- Final CTA Section --- */
 .final-cta {
     padding: 80px 0;
     text-align: center;
@@ -631,33 +917,10 @@ footer {
     color: var(--accent-color);
 }
 
-
-/* --- NUEVO: Sección de Consejos de Willy --- */
-/* --- Tarjeta para el banner de la caricatura en Servicios --- */
-.cartoon-banner {
-    max-width: 600px; /* Un tamaño máximo más adecuado para este banner */
-    margin: 0 auto 4rem auto; /* Centrado y con un buen margen inferior */
-    background: white;
-    border-radius: var(--border-radius);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-    padding: 20px; /* El relleno que crea el marco */
-    transition: transform 0.3s ease;
-}
-
-.cartoon-banner:hover {
-    transform: translateY(-5px);
-}
-
-.cartoon-banner img {
-    width: 100%;
-    display: block;
-    border-radius: 8px;
-}
-
-/* --- Tarjeta para el Consejo de Willy al final de la página --- */
+/* --- Willy Tips / Payment Section --- */
 .tip-card {
-    max-width: 850px; /* Mantenemos el tamaño más grande para esta tarjeta */
-    margin: 2rem auto 0 auto; /* Centrado y con margen superior */
+    max-width: 850px;
+    margin: 2rem auto 0 auto;
     background: white;
     border-radius: var(--border-radius);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
@@ -675,253 +938,7 @@ footer {
     border-radius: 8px;
 }
 
-#ruta-willy-tips {
-  padding: 40px 0;
-  background-color: #e5f7f4;
-  text-align: center;
-}
-
-#ruta-willy-tips h2 {
-  font-size: 2rem;
-  margin-bottom: 30px;
-  color: #004f4e;
-}
-
-/* Swiper wrapper */
-.rutaSwiper {
-  width: 100%;
-  max-width: 900px;
-  margin: 0 auto;
-  position: relative;
-}
-
-/* Each slide styled as a tip card (CORRECTED) */
-.swiper-slide.tip-slide {
-  width: 100%;
-  background: white;
-  border-radius: var(--border-radius);
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-  padding: 8px;
-  transition: transform 0.3s ease;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  aspect-ratio: 16 / 9; /* Mantiene proporción visual sin recortes */
-  overflow: hidden; /* Oculta cualquier desbordamiento */
-}
-
-.swiper-slide.tip-slide:hover {
-  transform: translateY(-5px);
-}
-
-.swiper-slide.tip-slide img {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  height: auto;
-  object-fit: contain;
-  border-radius: 8px;
-}
-
-/* Swiper navigation */
-.swiper-button-prev,
-.swiper-button-next {
-  color: #017a6f;
-  background: white;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-}
-
-.swiper-button-prev::after,
-.swiper-button-next::after {
-  font-size: 18px;
-}
-
-.swiper-button-prev {
-  left: -30px;
-}
-
-.swiper-button-next {
-  right: -30px;
-}
-
-@media (max-width: 768px) {
-  .swiper-button-prev,
-  .swiper-button-next {
-    display: none;
-  }
-}
-
-/* --- NEW: Fleet Section --- */
-.fleet-section {
-  padding: 80px 0;
-  background-color: var(--secondary-color);
-  text-align: center; /* Centra el título y subtítulo */
-}
-
-.fleet-section h2 {
-  margin-bottom: 3rem;
-}
-
-.fleet-section .section-subtitle {
-  max-width: 700px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: 3rem; /* Aumenta el espacio antes de la imagen */
-}
-
-.fleet-image-container {
-  text-align: center;
-}
-
-.fleet-image-container img {
-  max-width: 100%;
-  height: auto;
-  border-radius: var(--border-radius);
-  box-shadow: var(--box-shadow);
-}
-
-/* --- NEW: Gradual Spacing Text Animation (OPTIMIZED FOR MOBILE) --- */
-
-/* Estilos para la sección contenedora */
-.intro-text-section {
-  padding: 60px 0;
-  text-align: center;
-  background-color: var(--background-color);
-}
-
-/* 
-  NUEVO: Contenedor de cada palabra.
-  Esto asegura que la palabra no se rompa por la mitad.
-*/
-.gradual-spacing-text .word-wrapper {
-  display: inline-block; /* Mantiene la palabra como un bloque unido */
-}
-
-/* 
-  Estilos para cada letra (span) dentro del contenedor de la palabra.
-  Esto es lo que se anima.
-*/
-.gradual-spacing-text .word-wrapper > span {
-  display: inline-block;
-  opacity: 0; /* Empiezan invisibles */
-}
-
-/* REGLA CSS ACTUALIZADA */
-/* La animación solo se aplica a las letras cuando el padre tiene la clase 'is-visible' */
-.gradual-spacing-text.is-visible .word-wrapper > span {
-  animation: fadeInUp 0.5s forwards;
-}
-
-/* 
-  Definimos la animación 'fadeInUp' (sin cambios aquí).
-  'forwards' hace que el estado final (100%) se mantenga.
-*/
-@keyframes fadeInUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Media query para pantallas más pequeñas (sin cambios aquí) */
-@media (max-width: 768px) {
-  .gradual-spacing-text {
-    font-size: 1.8rem;
-  }
-}
-/* Ya no se necesita la corrección para el espacio, el JS ahora lo maneja correctamente */
-
-/* --- ANIMACIONES PARA LA SECCIÓN HERO --- */
-
-/* 1. Definición de las animaciones (keyframes) */
-
-/* Animación de revelado con máscara (para el h1) */
-@keyframes reveal-up {
-  from {
-    transform: translateY(110%);
-  }
-  to {
-    transform: translateY(0);
-  }
-}
-
-/* Animación de desvanecido y deslizamiento (para p y botón) */
-@keyframes fade-slide-up {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* 2. Estilos para los elementos del Hero */
-
-/* Contenedor del título (la máscara) */
-.hero-content .mask-line {
-  overflow: hidden; /* La magia de la máscara: oculta lo que se salga */
-  position: relative;
-}
-
-/* El texto dentro de la máscara (estado inicial) */
-.hero-content .mask-line span {
-  display: block;
-  transform: translateY(110%); /* Empieza fuera de la vista, abajo */
-  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-
-/* Párrafo y botón (estado inicial) */
-.hero-content p,
-.hero-content .cta-button {
-  opacity: 0; /* Empiezan invisibles */
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-
-/* 3. Aplicar las animaciones cuando se añade la clase 'animate-hero' */
-
-/* Animar el texto del título */
-.animate-hero .mask-line span {
-  animation: reveal-up 0.8s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
-}
-
-/* Animar el párrafo */
-.animate-hero p {
-  animation: fade-slide-up 0.8s ease forwards;
-}
-
-/* Animar el botón */
-.animate-hero .cta-button {
-  animation: fade-slide-up 0.8s ease forwards;
-}
-
-/* 4. Definir los retrasos (staggering) para un efecto escalonado */
-.animate-hero .mask-line:nth-child(2) span { animation-delay: 0.2s; }
-.animate-hero p { animation-delay: 0.6s; }
-.animate-hero .cta-button { animation-delay: 0.8s; }
-
-/* Estado inicial de los elementos que se animarán al hacer scroll */
-.animate-on-scroll:not(.gradual-spacing-text) {
-  opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-/* Estado final cuando el elemento es visible */
-.animate-on-scroll.is-visible:not(.gradual-spacing-text) {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* --- NEW: Interactive Map Section --- */
+/* --- Interactive Map Section --- */
 .interactive-map-section {
   padding: 80px 0;
   background-color: var(--background-color);
@@ -933,8 +950,8 @@ footer {
 }
 
 .map-container {
-  position: relative; /* Contenedor padre para posicionar los marcadores */
-  max-width: 900px; /* Evita que el mapa se haga demasiado grande */
+  position: relative;
+  max-width: 900px;
   margin: 0 auto;
 }
 
@@ -944,20 +961,18 @@ footer {
   border-radius: var(--border-radius);
 }
 
-/* Estilo general para cada marcador */
 .map-marker {
   position: absolute;
-  transform: translate(-50%, -50%); /* Centra el marcador en sus coordenadas */
+  transform: translate(-50%, -50%);
   z-index: 10;
+  text-decoration: none;
 }
 
-/* Posiciones específicas para cada marcador (ajústalas si es necesario) */
 #marker-barichara   { top: 36%; left: 48%; }
 #marker-san-gil     { top: 56%; left: 58%; }
 #marker-zapatoca    { top: 78%; left: 28%; }
 #marker-chicamocha  { top: 82%; left: 54%; }
 
-/* El punto visual del marcador */
 .marker-dot {
   width: 24px;
   height: 24px;
@@ -969,12 +984,11 @@ footer {
   animation: pulse 2s infinite;
 }
 
-/* La tarjeta de información (inicialmente oculta) */
 .info-card {
   position: absolute;
-  bottom: 140%; /* Se posiciona encima del punto */
+  bottom: 140%;
   left: 50%;
-  transform: translateX(-50%) translateY(15px); /* Empieza un poco abajo */
+  transform: translateX(-50%) translateY(15px);
   width: 220px;
   background: #fff;
   border-radius: var(--border-radius);
@@ -987,7 +1001,6 @@ footer {
   z-index: 20;
 }
 
-/* Muestra la tarjeta al hacer hover sobre el marcador */
 .map-marker:hover .info-card {
   opacity: 1;
   visibility: visible;
@@ -1013,44 +1026,167 @@ footer {
   color: #666;
 }
 
-/* Animación de pulso para llamar la atención sobre los marcadores */
+.info-card-link {
+  display: block;
+  margin-top: 8px;
+  color: var(--accent-color);
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
 @keyframes pulse {
   0% { box-shadow: 0 0 0 0 rgba(0, 106, 106, 0.4); }
   70% { box-shadow: 0 0 0 15px rgba(0, 106, 106, 0); }
   100% { box-shadow: 0 0 0 0 rgba(0, 106, 106, 0); }
 }
 
-/* Ajustes para pantallas pequeñas */
 @media (max-width: 768px) {
   .marker-dot { width: 20px; height: 20px; border-width: 3px; }
   .info-card { width: 180px; }
   .info-card img { height: 80px; }
 }
 
-/* ==========================================================================
-   CORRECCIONES PARA EL CARRUSEL DE GALERÍA
-   ========================================================================== */
-
-/* 
-  Esta es la nueva clase de ayuda.
-  Cuando una imagen tenga la clase .fit-contain, usará 'contain' 
-  en lugar de 'cover'. 'contain' asegura que toda la imagen sea visible.
-*/
-.swiper-slide img.fit-contain {
-  object-fit: contain;
+/* --- Footer --- */
+footer {
+  background-color: #263238;
+  color: white;
+  text-align: center;
+  padding: 40px 0;
+}
+.footer-brand {
+    font-family: var(--heading-font);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.footer-links {
+    margin-bottom: 1rem;
+}
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    transition: color 0.3s ease;
+}
+.footer-links a:hover {
+    color: var(--secondary-color);
+}
+.footer-destinations {
+    margin-bottom: 1rem;
+}
+.footer-destinations-title {
+    font-family: var(--heading-font);
+    font-size: 0.95rem;
+    margin-bottom: 0.5rem;
+    color: #aaa;
+}
+.footer-destinations a {
+    color: #ccc;
+    text-decoration: none;
+    margin: 0 8px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+.footer-destinations a:hover {
+    color: white;
+}
+.footer-social p {
+    color: #aaa;
+    font-size: 0.9rem;
 }
 
-/* 
-  OPCIONAL: Clase de ayuda para el fondo del slide.
-  Si una imagen con .fit-contain tiene mucho espacio blanco alrededor y 
-  no se distingue del fondo del slide, puedes añadir esta clase
-  al <div> padre (.swiper-slide) para darle un fondo oscuro y mejorar el contraste.
-*/
-.swiper-slide.bg-dark {
-  background-color: #2a2a2a; /* Un gris oscuro */
+/* --- Animations --- */
+.intro-text-section {
+  padding: 60px 0;
+  text-align: center;
+  background-color: var(--background-color);
 }
 
-/* Utilidad para ocultar texto accesiblemente (añadir al final de styles.css) */
+.gradual-spacing-text .word-wrapper {
+  display: inline-block;
+}
+
+.gradual-spacing-text .word-wrapper > span {
+  display: inline-block;
+  opacity: 0;
+}
+
+.gradual-spacing-text.is-visible .word-wrapper > span {
+  animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .gradual-spacing-text {
+    font-size: 1.8rem;
+  }
+}
+
+/* Hero Animations */
+@keyframes reveal-up {
+  from { transform: translateY(110%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes fade-slide-up {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-content .mask-line {
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-content .mask-line span {
+  display: block;
+  transform: translateY(110%);
+  transition: transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.hero-content p,
+.hero-content .cta-button {
+  opacity: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.animate-hero .mask-line span {
+  animation: reveal-up 0.8s cubic-bezier(0.2, 0.6, 0.2, 1) forwards;
+}
+
+.animate-hero p {
+  animation: fade-slide-up 0.8s ease forwards;
+}
+
+.animate-hero .cta-button {
+  animation: fade-slide-up 0.8s ease forwards;
+}
+
+.animate-hero .mask-line:nth-child(2) span { animation-delay: 0.2s; }
+.animate-hero p { animation-delay: 0.6s; }
+.animate-hero .cta-button { animation-delay: 0.8s; }
+
+.animate-on-scroll:not(.gradual-spacing-text) {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.animate-on-scroll.is-visible:not(.gradual-spacing-text) {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* --- Utility Classes --- */
 .sr-only {
   position: absolute;
   width: 1px;
@@ -1061,4 +1197,373 @@ footer {
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
+.swiper-slide img.fit-contain {
+  object-fit: contain;
+}
+
+.swiper-slide.bg-dark {
+  background-color: #2a2a2a;
+}
+
+/* ==========================================================================
+   SUBPAGE STYLES (Destination pages, Airport page)
+   ========================================================================== */
+
+/* --- Subpage Hero --- */
+.subpage-hero {
+  background-size: cover;
+  background-position: center;
+  height: 60vh;
+  min-height: 400px;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+
+.subpage-hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.1) 60%);
+}
+
+.subpage-hero-content {
+  position: relative;
+  z-index: 5;
+  color: white;
+  padding-bottom: 60px;
+  width: 100%;
+}
+
+.subpage-hero-content h1 {
+  color: white;
+  font-size: 3rem;
+  text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+.subpage-hero-content p {
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+  max-width: 600px;
+}
+
+/* --- Breadcrumb --- */
+.breadcrumb {
+  padding: 15px 0;
+  background-color: var(--secondary-color);
+}
+
+.breadcrumb-list {
+  list-style: none;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.breadcrumb-list li {
+  font-size: 0.9rem;
+}
+
+.breadcrumb-list a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.breadcrumb-list a:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-list .breadcrumb-separator {
+  color: #999;
+}
+
+.breadcrumb-list .breadcrumb-current {
+  color: #666;
+  font-weight: 600;
+}
+
+/* --- Subpage Content --- */
+.subpage-content {
+  padding: 60px 0;
+}
+
+.subpage-content h2 {
+  text-align: left;
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+}
+
+.subpage-content p {
+  margin-bottom: 1rem;
+  line-height: 1.8;
+}
+
+.subpage-content .highlight-box {
+  background: var(--secondary-color);
+  border-left: 4px solid var(--primary-color);
+  padding: 25px 30px;
+  border-radius: 0 var(--border-radius) var(--border-radius) 0;
+  margin: 2rem 0;
+}
+
+.subpage-content .highlight-box h3 {
+  margin-bottom: 0.5rem;
+}
+
+/* Attractions Grid */
+.attractions-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+  margin: 2rem 0;
+}
+
+.attraction-card {
+  background: white;
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.attraction-card:hover {
+  transform: translateY(-5px);
+}
+
+.attraction-card-body {
+  padding: 20px;
+}
+
+.attraction-card-body h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.attraction-card-body p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0;
+}
+
+/* CTA Banner on subpages */
+.subpage-cta {
+  background: linear-gradient(135deg, var(--primary-color) 0%, #004d4d 100%);
+  color: white;
+  padding: 60px 0;
+  text-align: center;
+}
+
+.subpage-cta h2 {
+  color: white;
+  margin-bottom: 1rem;
+}
+
+.subpage-cta p {
+  color: rgba(255,255,255,0.9);
+  margin-bottom: 2rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.subpage-cta .cta-button {
+  background-color: white;
+  color: var(--primary-color);
+  font-size: 1.1rem;
+}
+
+.subpage-cta .cta-button:hover {
+  background-color: #f0f0f0;
+}
+
+/* Cross-links section */
+.cross-links {
+  padding: 60px 0;
+  background-color: var(--background-color);
+}
+
+.cross-links h2 {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.cross-links-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 25px;
+}
+
+.cross-link-card {
+  display: block;
+  text-decoration: none;
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: transform 0.3s ease;
+  background: white;
+}
+
+.cross-link-card:hover {
+  transform: translateY(-5px);
+}
+
+.cross-link-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.cross-link-card-body {
+  padding: 15px 20px;
+}
+
+.cross-link-card-body h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.3rem;
+}
+
+.cross-link-card-body p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+}
+
+/* --- FAQ Section (for Airport page) --- */
+.faq-section {
+  padding: 60px 0;
+  background-color: var(--secondary-color);
+}
+
+.faq-list {
+  max-width: 800px;
+  margin: 2rem auto 0;
+}
+
+.faq-item {
+  background: white;
+  border-radius: var(--border-radius);
+  margin-bottom: 15px;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 20px 25px;
+  text-align: left;
+  font-family: var(--heading-font);
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--primary-color);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.faq-question:hover {
+  background-color: #f9f9f9;
+}
+
+.faq-question i {
+  transition: transform 0.3s ease;
+  font-size: 0.9rem;
+}
+
+.faq-item.open .faq-question i {
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+  padding: 0 25px;
+}
+
+.faq-item.open .faq-answer {
+  max-height: 300px;
+  padding: 0 25px 20px;
+}
+
+.faq-answer p {
+  color: #555;
+  line-height: 1.7;
+}
+
+/* --- How It Works (Airport page) --- */
+.how-it-works {
+  padding: 60px 0;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 2rem;
+}
+
+.step-card {
+  text-align: center;
+  padding: 30px 20px;
+}
+
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary-color), #008c8c);
+  color: white;
+  font-family: var(--heading-font);
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.step-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.step-card p {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* --- Mobile Responsiveness --- */
+@media (max-width: 768px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.8rem; }
+  h3 { font-size: 1.3rem; }
+  
+  .hero { height: 80vh; min-height: 500px; }
+  .hero-content h1 { font-size: 2rem; }
+  .hero-content p { font-size: 1rem; }
+  
+  .about-card { padding: 20px !important; gap: 20px !important; }
+  
+  .service-feature-card { padding: 20px; }
+  
+  .final-cta h2 { font-size: 2rem; }
+  
+  .review-form-grid { grid-template-columns: 1fr; }
+  
+  .subpage-hero { height: 50vh; min-height: 300px; }
+  .subpage-hero-content h1 { font-size: 2rem; }
+  
+  .steps-grid { grid-template-columns: 1fr; }
 }

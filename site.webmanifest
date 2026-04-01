@@ -1,6 +1,6 @@
 {
-  "name": "MyWebSite",
-  "short_name": "MySite",
+  "name": "Willy Tours — Transporte Especial en Bucaramanga",
+  "short_name": "Willy Tours",
   "icons": [
     {
       "src": "/web-app-manifest-192x192.png",
@@ -15,7 +15,9 @@
       "purpose": "maskable"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "theme_color": "#006A6A",
+  "background_color": "#FAF8F5",
+  "display": "standalone",
+  "start_url": "/",
+  "scope": "/"
 }

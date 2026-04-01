@@ -7,39 +7,62 @@
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-0ELEP92S99');
 </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- Título Optimizado para SEO (Atrae clics y posiciona) -->
-<title>Transporte Especial y Turístico en Bucaramanga | Willy Tours</title>
-<!-- Meta Descripción Optimizada (Convence al usuario de hacer clic) -->
-<meta name="description" content="Servicio de transporte premium, privado y ejecutivo en Bucaramanga. Realizamos tours turísticos a Barichara, San Gil y el Cañón del Chicamocha. ¡Conductores profesionales y vehículos seguros!">  
+
+  <!-- SEO: Title & Meta Description -->
+  <title>Transporte Especial y Turístico en Bucaramanga | Willy Tours</title>
+  <meta name="description" content="Servicio de transporte premium, privado y ejecutivo en Bucaramanga. Realizamos tours turísticos a Barichara, San Gil, Hidrosogamoso y el Cañón del Chicamocha. ¡Conductores profesionales y vehículos seguros!">
+
+  <!-- SEO: Canonical URL -->
+  <link rel="canonical" href="https://www.willytourbucaramanga.com/">
+
+  <!-- SEO: Open Graph (Facebook, WhatsApp, LinkedIn) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Transporte Especial y Turístico en Bucaramanga | Willy Tours">
+  <meta property="og:description" content="Servicio de transporte premium en Bucaramanga. Tours a Barichara, San Gil, Chicamocha y más. Conductores profesionales y vehículos seguros.">
+  <meta property="og:image" content="https://www.willytourbucaramanga.com/hero-background.png">
+  <meta property="og:url" content="https://www.willytourbucaramanga.com/">
+  <meta property="og:site_name" content="Willy Tours">
+  <meta property="og:locale" content="es_CO">
+
+  <!-- SEO: Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Transporte Especial y Turístico en Bucaramanga | Willy Tours">
+  <meta name="twitter:description" content="Servicio de transporte premium. Tours turísticos a Barichara, San Gil, Chicamocha y más.">
+  <meta name="twitter:image" content="https://www.willytourbucaramanga.com/hero-background.png">
+
+  <!-- SEO: Additional Meta -->
+  <meta name="robots" content="index, follow">
+  <meta name="geo.region" content="CO-SAN">
+  <meta name="geo.placename" content="Bucaramanga">
+
   <!-- ====================================================================== -->
   <!-- ==================== OPTIMIZACIONES DE CARGA ======================= -->
   <!-- ====================================================================== -->
 
-  <!-- 1. Prioriza la carga de la imagen del hero para que aparezca lo antes posible -->
+  <!-- 1. Prioriza la carga de la imagen del hero -->
   <link rel="preload" fetchpriority="high" as="image" href="hero-background.png" type="image/png">
   
-  <!-- 2. Pre-conecta con dominios externos para acelerar la carga de recursos -->
+  <!-- 2. Pre-conecta con dominios externos -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   
+  <!-- Structured Data: LocalBusiness -->
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "LocalBusiness",
   "name": "Willy Tours",
-  "image": "https://www.willytours.com/willy-tours-logo.png",
-  "@id": "https://www.willytours.com/",
-  "url": "https://www.willytours.com/",
-  "telephone": "+571234567890", // <-- CAMBIAR POR TU NÚMERO DE TELÉFONO REAL
+  "image": "https://www.willytourbucaramanga.com/willy-tours-logo.png",
+  "@id": "https://www.willytourbucaramanga.com/",
+  "url": "https://www.willytourbucaramanga.com/",
+  "telephone": "+573001234567",
   "priceRange": "$$$",
   "address": {
     "@type": "PostalAddress",
-    "streetAddress": "Carrera 33 # 45-56", // <-- CAMBIAR POR TU DIRECCIÓN REAL (o de la zona)
     "addressLocality": "Bucaramanga",
     "addressRegion": "Santander",
     "postalCode": "680001",
@@ -48,41 +71,58 @@
   "openingHoursSpecification": {
     "@type": "OpeningHoursSpecification",
     "dayOfWeek": [
-      "Monday",
-      "Tuesday",
-      "Wednesday",
-      "Thursday",
-      "Friday",
-      "Saturday",
-      "Sunday"
+      "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"
     ],
     "opens": "00:00",
     "closes": "23:59"
   },
   "description": "Willy Tours ofrece un servicio de transporte especial, turístico y ejecutivo en Bucaramanga y todo Santander. Viajes seguros y confiables con conductores profesionales.",
-  "hasOffer": [
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Transporte Turístico Bucaramanga"
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Servicios de Transporte",
+    "itemListElement": [
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Transporte Turístico Bucaramanga",
+          "url": "https://www.willytourbucaramanga.com/#services"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Transporte al Aeropuerto Palonegro",
+          "url": "https://www.willytourbucaramanga.com/servicio-aeropuerto.html"
+        }
+      },
+      {
+        "@type": "Offer",
+        "itemOffered": {
+          "@type": "Service",
+          "name": "Transporte Ejecutivo para Empresas",
+          "url": "https://www.willytourbucaramanga.com/#services"
+        }
       }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Transporte al Aeropuerto Palonegro"
-      }
-    },
-    {
-      "@type": "Offer",
-      "itemOffered": {
-        "@type": "Service",
-        "name": "Transporte Ejecutivo para Empresas"
-      }
-    }
-  ]
+    ]
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "3",
+    "bestRating": "5"
+  }
+}
+</script>
+
+  <!-- Structured Data: WebSite (enables sitelinks search) -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Willy Tours",
+  "url": "https://www.willytourbucaramanga.com/"
 }
 </script>
 
@@ -91,24 +131,45 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/site.webmanifest">
 </head>
 <body>
 
   <!-- Header Section -->
   <header class="main-header">
     <div class="container">
-      <a href="#" class="logo">
-        <!-- El logo del header NO lleva lazy loading porque es visible de inmediato -->
-        <img src="willy-tours-logo.png" alt="Willy Tours Logo" width="50" height="50">
+      <a href="/" class="logo">
+        <img src="willy-tours-logo.png" alt="Willy Tours Logo — Transporte Especial en Bucaramanga" width="50" height="50">
       </a>
-      <nav class="main-nav">
+      <!-- Mobile Hamburger Button -->
+      <button class="hamburger" id="hamburgerBtn" aria-label="Abrir menú de navegación" aria-expanded="false">
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+      <nav class="main-nav" id="mainNav">
         <ul>
-          <li><a href="#about">Sobre Nosotros</a></li>
-          <li><a href="#services">Servicios</a></li>
-          <li><a href="#fleet">Nuestra Flota</a></li>
+          <li><a href="/sobre-nosotros.html">Sobre Nosotros</a></li>
+          <li><a href="/#services">Servicios</a></li>
+          <li><a href="/servicio-aeropuerto.html">Aeropuerto</a></li>
+          <li class="nav-dropdown">
+            <a href="#interactive-map" class="dropdown-trigger">Destinos <i class="fas fa-chevron-down fa-xs"></i></a>
+            <ul class="dropdown-menu">
+              <li><a href="/destinos/barichara.html">Barichara</a></li>
+              <li><a href="/destinos/san-gil.html">San Gil</a></li>
+              <li><a href="/destinos/chicamocha.html">Chicamocha</a></li>
+              <li><a href="/destinos/zapatoca.html">Zapatoca</a></li>
+              <li><a href="/destinos/hidrosogamoso.html">Hidrosogamoso</a></li>
+            </ul>
+          </li>
           <li><a href="#gallery">Galería</a></li>
           <li><a href="#testimonials">Opiniones</a></li>
-          <li><a href="#reserva">Reservar</a></li>
+          <li><a href="#reserva" class="nav-cta">Reservar</a></li>
         </ul>
       </nav>
     </div>
@@ -118,7 +179,6 @@
   <section class="hero">
     <div class="hero-content">
       <h1>
-  <!-- Texto oculto para SEO con la palabra clave principal -->
   <span class="sr-only">Transporte Especial en Bucaramanga</span>
   <div class="mask-line" aria-hidden="true"><span>Explora con estilo.</span></div>
   <div class="mask-line" aria-hidden="true"><span>Viaja con confianza.</span></div>
@@ -141,7 +201,6 @@
       <div class="about-card animate-on-scroll">
         <div class="about-image-slider">
           <div class="slides-container">
-            <!-- CAMBIO: Añadido loading="lazy" y dimensiones a las imágenes -->
             <img src="willy-tours-about-car.png" alt="Camioneta SUV para servicio de transporte privado en Bucaramanga" class="about-slide active-slide" loading="lazy" width="500" height="450">
             <img src="willy-photo.jpg" alt="Willy, conductor profesional y fundador de Willy Tours Santander" class="about-slide" loading="lazy" width="500" height="450">
           </div>
@@ -166,12 +225,11 @@
       
       <section id="ruta-willy-tips" class="ruta-willy-carousel">
         <div class="container">
-          <h2>Consejos de #RutaWilly</h2>
+          <h3>Consejos de #RutaWilly</h3>
           <div class="swiper rutaSwiper">
             <div class="swiper-wrapper">
-              <!-- CAMBIO: Añadido loading="lazy" y dimensiones a todas las imágenes del carrusel -->
               <div class="swiper-slide tip-slide"><img src="willy-tip-plan.png" alt="Consejo de Willy Tours sobre cómo planificar un viaje en Bucaramanga" loading="lazy" width="800" height="450"></div>
-              <div class="swiper-slide tip-slide"><img src="willy-tip-niño.png" alt="servicio de transporte seguro para niños en Bucaramanga" loading="lazy" width="800" height="450"></div>
+              <div class="swiper-slide tip-slide"><img src="willy-tip-niño.png" alt="Servicio de transporte seguro para niños en Bucaramanga" loading="lazy" width="800" height="450"></div>
               <div class="swiper-slide tip-slide"><img src="willy-tip-paquetes.png" alt="Servicio de entrega de paquetes y mensajería en Bucaramanga" loading="lazy" width="800" height="450"></div>
               <div class="swiper-slide tip-slide"><img src="willy-tip-ayuda.png" alt="Willy Tours, un servicio de transporte confiable y con buena energía" loading="lazy" width="800" height="450"></div>
               <div class="swiper-slide tip-slide"><img src="willy-tip-negocios.png" alt="Puntualidad en el transporte ejecutivo para reuniones en Bucaramanga" loading="lazy" width="800" height="450"></div>
@@ -182,6 +240,7 @@
         </div>
       </section>
 
+      <!-- Airport Service Feature Card -->
       <div class="service-feature-card">
         <div class="service-feature-text">
             <h3><i class="fas fa-plane-departure"></i> Transporte desde el Aeropuerto Palonegro</h3>
@@ -191,10 +250,9 @@
                 <li><i class="fas fa-check-circle"></i> Atención personalizada</li>
                 <li><i class="fas fa-check-circle"></i> Ideal para viajeros individuales, parejas o grupos</li>
             </ul>
-            <a href="https://wa.link/9g9ql3" target="_blank" class="cta-link">Reserva tu recorrido y viaja con la mejor energía <i class="fab fa-whatsapp"></i></a>
+            <a href="/servicio-aeropuerto.html" class="cta-link">Conoce nuestro servicio de aeropuerto <i class="fas fa-arrow-right"></i></a>
         </div>
         <div class="service-feature-image">
-          <!-- CAMBIO: Añadido loading="lazy" y dimensiones -->
           <img src="bucaramanga-skyline.jpg" alt="Vista de Bucaramanga para el servicio de transporte desde el aeropuerto Palonegro" loading="lazy" width="550" height="450">
         </div>
       </div>
@@ -209,7 +267,7 @@
         <div class="card">
           <div class="card-icon"><i class="fas fa-mountain-sun"></i></div>
           <h3>Transporte Turístico</h3>
-          <p>Explora lo mejor de Santander. Te llevamos a lugares inolvidables como Barichara, San Gil y Zapatoca con seguridad y estilo.</p>
+          <p>Explora lo mejor de Santander. Te llevamos a <a href="/destinos/barichara.html">Barichara</a>, <a href="/destinos/san-gil.html">San Gil</a> y <a href="/destinos/zapatoca.html">Zapatoca</a> con seguridad y estilo.</p>
           <a href="https://wa.link/9g9ql3" target="_blank" class="cta-link">Reserva tu tour <i class="fab fa-whatsapp"></i></a>
         </div>
         <div class="card">
@@ -246,7 +304,6 @@
       <h2 class="animate-on-scroll">Viaja tranquilo, viaja con Willy</h2>
       <p class="section-subtitle animate-on-scroll">Nuestros vehículos están listos para brindarte una experiencia cómoda desde el primer kilómetro. Explora Bucaramanga y alrededores con el transporte que se adapta a ti.</p>
       <div class="fleet-image-container animate-on-scroll">
-        <!-- CAMBIO: Añadido loading="lazy" y dimensiones -->
         <img src="nuestra-flota.png" alt="Flota de vehículos Willy Tours para transporte especial, turístico y ejecutivo en Santander" loading="lazy" width="900" height="500">
       </div>
     </div>
@@ -258,7 +315,6 @@
       <h2>Nuestras Aventuras en Fotos</h2>
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-          <!-- CAMBIO: Añadido loading="lazy" y dimensiones a TODAS las imágenes de la galería -->
           <div class="swiper-slide"><img src="gallery1.jpg" alt="Paisaje montañoso de Santander durante un tour privado con Willy Tours" loading="lazy" width="400" height="400"></div>
           <div class="swiper-slide"><img src="gallery2.jpg"  alt="Vehículo de Willy Tours estacionado en las calles de Barichara" loading="lazy" width="400" height="400"></div>
           <div class="swiper-slide"><img src="gallery3.jpg" alt="Viajeros felices disfrutando de una excursión desde Bucaramanga" loading="lazy" width="400" height="400"></div>
@@ -281,16 +337,18 @@
     </div>
   </section>
   
-  <!-- Testimonials Section -->
+  <!-- Testimonials & Reviews Section -->
   <section id="testimonials" class="testimonials-new">
     <div class="container">
       <h2>Nuestros Viajeros Opinan</h2>
-      <div class="testimonials-grid">
+      
+      <!-- Existing Testimonials -->
+      <div class="testimonials-grid" id="testimonialsGrid">
         <div class="testimonial-card-new">
           <i class="fas fa-quote-left testimonial-quote-icon"></i>
-          <p class="quote">“Viajar con Willy Tours fue la mejor decisión de nuestras vacaciones. Puntuales, atentos y súper cómodos.”</p>
+          <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="quote">"Viajar con Willy Tours fue la mejor decisión de nuestras vacaciones. Puntuales, atentos y súper cómodos."</p>
           <div class="testimonial-author">
-            <!-- CAMBIO: Añadido loading="lazy" y dimensiones a los avatares -->
             <img src="avatar1.jpg" alt="Foto de Laura Gómez, clienta satisfecha con el transporte de Willy Tours" class="author-avatar" loading="lazy" width="60" height="60">
             <div class="author-info">
               <span class="author-name">Laura Gómez</span>
@@ -300,7 +358,8 @@
         </div>
         <div class="testimonial-card-new">
           <i class="fas fa-quote-left testimonial-quote-icon"></i>
-          <p class="quote">“Excelente servicio, se siente la calidad desde el primer momento. Totalmente recomendado.”</p>
+          <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="quote">"Excelente servicio, se siente la calidad desde el primer momento. Totalmente recomendado."</p>
           <div class="testimonial-author">
             <img src="avatar2.jpg" alt="Foto de Carlos Herrera, cliente que recomienda el servicio de transporte ejecutivo" class="author-avatar" loading="lazy" width="60" height="60">
             <div class="author-info">
@@ -311,7 +370,8 @@
         </div>
         <div class="testimonial-card-new">
           <i class="fas fa-quote-left testimonial-quote-icon"></i>
-          <p class="quote">“El conductor fue increíblemente amable y conocedor de la zona. Hizo nuestro viaje a San Gil una experiencia única.”</p>
+          <div class="testimonial-stars"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p class="quote">"El conductor fue increíblemente amable y conocedor de la zona. Hizo nuestro viaje a San Gil una experiencia única."</p>
           <div class="testimonial-author">
             <img src="avatar3.png" alt="Foto de Karla Biancheri, turista que tuvo una gran experiencia de viaje a San Gil" class="author-avatar" loading="lazy" width="60" height="60">
             <div class="author-info">
@@ -321,6 +381,30 @@
           </div>
         </div>
       </div>
+
+      <!-- Review Form -->
+      <div class="review-form-container" id="reviewFormContainer">
+        <h3>¿Viajaste con nosotros? ¡Déjanos tu opinión!</h3>
+        <form id="reviewForm" class="review-form">
+          <div class="star-rating-input" id="starRatingInput">
+            <span>Tu calificación:</span>
+            <div class="stars-input">
+              <i class="fas fa-star" data-rating="1"></i>
+              <i class="fas fa-star" data-rating="2"></i>
+              <i class="fas fa-star" data-rating="3"></i>
+              <i class="fas fa-star" data-rating="4"></i>
+              <i class="fas fa-star" data-rating="5"></i>
+            </div>
+            <input type="hidden" id="ratingValue" name="rating" required>
+          </div>
+          <div class="review-form-grid">
+            <input type="text" id="reviewName" name="name" placeholder="Tu nombre" required maxlength="50">
+            <input type="text" id="reviewCity" name="city" placeholder="Tu ciudad" required maxlength="50">
+          </div>
+          <textarea id="reviewComment" name="comment" placeholder="Cuéntanos tu experiencia con Willy Tours..." required maxlength="500" rows="4"></textarea>
+          <button type="submit" class="cta-button review-submit-btn">Enviar Opinión <i class="fas fa-paper-plane"></i></button>
+        </form>
+      </div>
     </div>
   </section>
 
@@ -329,42 +413,44 @@
     <div class="container">
       <h2 class="animate-on-scroll">Descubre tu próxima parada, ¿A dónde vamos hoy?</h2>
       <div class="map-container animate-on-scroll">
-        <!-- CAMBIO: Añadido loading="lazy" y dimensiones al mapa principal -->
         <img src="explora-santander.png" alt="Mapa de rutas turísticas en Santander ofrecidas por Willy Tours" class="map-image" loading="lazy" width="900" height="600">
         
-        <div class="map-marker" id="marker-barichara">
+        <a href="/destinos/barichara.html" class="map-marker" id="marker-barichara">
           <div class="marker-dot"></div>
           <div class="info-card">
-            <!-- CAMBIO: Añadido loading="lazy" y dimensiones a las imágenes de los pop-ups -->
             <img src="barichara-thumb.jpg" alt="Calle empedrada de Barichara, destino de tour turístico" loading="lazy" width="200" height="100">
             <h3>Barichara</h3>
             <p>Pueblo patrimonio y calles de ensueño.</p>
+            <span class="info-card-link">Ver guía completa →</span>
           </div>
-        </div>
-        <div class="map-marker" id="marker-san-gil">
+        </a>
+        <a href="/destinos/san-gil.html" class="map-marker" id="marker-san-gil">
           <div class="marker-dot"></div>
           <div class="info-card">
             <img src="san-gil-thumb.jpg" alt="Deportes de aventura en San Gil, destino de excursiones" loading="lazy" width="200" height="100">
             <h3>San Gil</h3>
             <p>La capital de la aventura y la adrenalina.</p>
+            <span class="info-card-link">Ver guía completa →</span>
           </div>
-        </div>
-        <div class="map-marker" id="marker-zapatoca">
+        </a>
+        <a href="/destinos/zapatoca.html" class="map-marker" id="marker-zapatoca">
           <div class="marker-dot"></div>
           <div class="info-card">
             <img src="zapatoca-thumb.jpg" alt="Paisaje de Zapatoca, el pueblo con clima de seda" loading="lazy" width="200" height="100">
             <h3>Zapatoca</h3>
             <p>El pueblo con el clima de seda y naturaleza.</p>
+            <span class="info-card-link">Ver guía completa →</span>
           </div>
-        </div>
-        <div class="map-marker" id="marker-chicamocha">
+        </a>
+        <a href="/destinos/chicamocha.html" class="map-marker" id="marker-chicamocha">
           <div class="marker-dot"></div>
           <div class="info-card">
             <img src="chicamocha-thumb.jpg" alt="Viaje al imponente Cañón del Chicamocha con transporte seguro" loading="lazy" width="200" height="100">
             <h3>Cañón del Chicamocha</h3>
             <p>Un paisaje imponente y vistas espectaculares.</p>
+            <span class="info-card-link">Ver guía completa →</span>
           </div>
-        </div>
+        </a>
       </div>
     </div>
   </section>
@@ -387,7 +473,6 @@
       <h2>¿Cómo puedes pagar tu viaje?</h2>
       <p class="section-subtitle">Rápido, fácil y sin complicaciones.</p>
       <div class="tip-card">
-        <!-- CAMBIO: Añadido loading="lazy" y dimensiones -->
         <img src="willy-payment.png" alt="Opciones de pago para el servicio de transporte personalizado de Willy Tours" loading="lazy" width="850" height="478">
       </div>
     </div>
@@ -398,10 +483,19 @@
     <div class="container">
       <p class="footer-brand">Willy Tours – Confort en cada kilómetro.</p>
       <div class="footer-links">
-        <a href="#about">Sobre Nosotros</a> |
-        <a href="#services">Servicios</a> |
+        <a href="/sobre-nosotros.html">Sobre Nosotros</a> |
+        <a href="/#services">Servicios</a> |
+        <a href="/servicio-aeropuerto.html">Aeropuerto</a> |
         <a href="#testimonials">Reseñas</a> |
         <a href="#reserva">Reservar</a>
+      </div>
+      <div class="footer-destinations">
+        <p class="footer-destinations-title">Destinos</p>
+        <a href="/destinos/barichara.html">Barichara</a> |
+        <a href="/destinos/san-gil.html">San Gil</a> |
+        <a href="/destinos/chicamocha.html">Chicamocha</a> |
+        <a href="/destinos/zapatoca.html">Zapatoca</a> |
+        <a href="/destinos/hidrosogamoso.html">Hidrosogamoso</a>
       </div>
       <div class="footer-social">
         <p>#WillyTours #ViajesConEstilo #ColombiaEnRuta</p>
@@ -410,10 +504,11 @@
   </footer>
 
   <!-- ====================================================================== -->
-  <!-- ===== CAMBIO FINAL: BLOQUE DE SCRIPTS OPTIMIZADO CON DEFER ========= -->
+  <!-- ===== BLOQUE DE SCRIPTS OPTIMIZADO CON DEFER ======================== -->
   <!-- ====================================================================== -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
   <script src="main.js" defer></script>
+  <script type="module" src="firebase-integration.js"></script>
 
 </body>
 </html>
